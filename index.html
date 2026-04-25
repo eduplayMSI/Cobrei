@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Cobrei? · Assistente de cobrança</title>
+  <meta name="description" content="Cobrei? – PWA para pequenos prestadores, freelancers e MEIs: controle de cobranças, lembretes via WhatsApp, recorrência e relatórios.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="assets/icon-192.webp">
+  <meta name="theme-color" content="#1E3A5F">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+</head>
+<body>
+  <div class="app-container" id="app">    
+    <header class="main-header">
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+      <h1 class="logo">Cobrei<span>?</span></h1>
+      <button id="btnInstall" class="btn-install" style="display: none; background: #2C5282; color: white; border: none; border-radius: 20px; padding: 5px 12px; margin-right: 8px; font-size: 0.8rem;">📲 Instalar</button>
+      <div class="plan-badge" id="planBadge">Free</div>
+    </header>
+
+    <nav class="sidebar" id="sidebar">
+      <ul class="nav-links">
+        <li data-view="dashboard" class="active">📊 Dashboard</li>
+        <li data-view="clientes">👥 Clientes</li>
+        <li data-view="cobrancas">💰 Cobranças</li>
+        <li data-view="mensagens">💬 Mensagens</li>
+        <li data-view="relatorios">📈 Relatórios</li>
+        <li data-view="configuracoes">⚙️ Configurações</li>
+      </ul>
+    </nav>
+
+    <main class="main-content" id="mainContent">
+      <!-- Conteúdo dinâmico via JS -->
+      <div class="loading">Carregando Cobrei? ...</div>
+    </main>
+
+    <div class="toast-container" id="toastContainer"></div>
+  </div>
+
+    <!-- Barra promocional para plano Free -->
+<div id="promoBar" class="promo-bar";>
+  <div class="promo-content">
+    <span>🚀</span> Desbloqueie clientes ilimitados, relatórios avançados e muito mais!
+    <button id="closePromoBarBtn" class="promo-close">✕</button>
+  </div>
+  <div class="promo-progress"></div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
